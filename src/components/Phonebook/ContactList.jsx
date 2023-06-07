@@ -1,12 +1,10 @@
-import React from 'react';
-
-export const ContactList = ({ contacts, deleteContact }) => {
+export const ContactList = ({ contacts, deleteContact, key }) => {
   return (
     <div>
       <p>Contacts</p>
       <ul>
         {contacts.map(contact => (
-          <li key={contact.id}>
+          <li key={key}>
             <p>
               {contact.name}: {contact.number}
             </p>
