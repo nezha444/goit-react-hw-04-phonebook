@@ -17,7 +17,7 @@ export const App = () => {
     prevContactsRef.current = contacts;
 
     if (parsedLocalDataContacts) setContacts(parsedLocalDataContacts);
-  }, []);
+  }, [contacts]);
 
   useEffect(() => {
     const prevContacts = prevContactsRef.current;
