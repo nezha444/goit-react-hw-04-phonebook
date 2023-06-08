@@ -1,10 +1,12 @@
-export const ContactList = ({ contacts, deleteContact, key }) => {
+import PropTypes from 'prop-types';
+
+export const ContactList = ({ contacts, deleteContact }) => {
   return (
     <div>
       <p>Contacts</p>
       <ul>
         {contacts.map(contact => (
-          <li key={key}>
+          <li key={contact.id}>
             <p>
               {contact.name}: {contact.number}
             </p>
@@ -16,4 +18,8 @@ export const ContactList = ({ contacts, deleteContact, key }) => {
       </ul>
     </div>
   );
+};
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
